@@ -1,7 +1,8 @@
 NAME = rush-02
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-SRCS = main.c utils.c dict.c convert.c
+SRCS = main.c utils.c number.c dict.c dict_read.c dict_helpers.c \
+	dict_line.c convert.c convert_print.c convert_scale.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

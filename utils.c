@@ -27,7 +27,7 @@ char	*ft_strdup_range(const char *s, int start, int end)
 
 	if (end < start)
 		return (NULL);
-	out = malloc((end - start + 1) * sizeof(char));
+	out = malloc(sizeof(char) * (end - start + 1));
 	if (!out)
 		return (NULL);
 	i = 0;
@@ -57,16 +57,4 @@ int	is_digit_string(const char *s)
 		i++;
 	}
 	return (1);
-}
-
-char	*normalize_number(const char *s)
-{
-	int	i;
-	int	len;
-
-	i = 0;
-	while (s[i] == '0' && s[i + 1])
-		i++;
-	len = ft_strlen(s);
-	return (ft_strdup_range(s, i, len));
 }
